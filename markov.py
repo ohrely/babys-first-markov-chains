@@ -50,14 +50,12 @@ def make_text(chains):
     while new_key in chains:
         next_word = choice(chains[new_key])
         text = text + " " + next_word
-        split_text = text.split(" ")
-        new_key = split_text[-2:]
-        new_key = (new_key[0], new_key[1])
+        new_key = (new_key[1], next_word)
 
     print text
 
 
-input_path = "green-eggs.txt"
+input_path = "gettysburg.txt"
 
 # Open the file and turn it into one long string
 input_text = open_and_read_file(input_path)
